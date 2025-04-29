@@ -8,10 +8,10 @@ let conexion;
 (async () => {
   try {
     conexion = await mysql.createConnection({
-      host: '127.0.0.1',
-      user: 'root',
-      password: 'J0RG1nh@',
-      database: 'proyectofinal'
+      host: process.env.DB_HOST,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_DATABASE
     });
     console.log('Conectado a la base de datos proyectofinal');
   } catch (err) {
